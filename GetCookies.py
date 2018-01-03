@@ -10,13 +10,13 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-dcap = dict(DesiredCapabilities.PHANTOMJS)  # PhantomJS需要使用老版手机的user-agent，不然验证码会无法通过
+dcap = dict(DesiredCapabilities.PHANTOMJS)  
 dcap["phantomjs.page.settings.userAgent"] = (
     "Mozilla/5.0 (Linux; U; Android 2.3.6; en-us; Nexus S Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
 )
 
 def get_cookie(account, password):
-    """ 获取一个账号的Cookie """
+   
     loginURL = "https://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18)"
     username = base64.b64encode(account.encode("utf-8")).decode("utf-8")
     postData = {
